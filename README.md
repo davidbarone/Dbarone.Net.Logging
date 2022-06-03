@@ -3,17 +3,18 @@ A simple .NET logging library.
 
 ## Summary
 
-Logging is a common task in enterprise applications. This library contains simple `Logger` class to provide a number of overloaded Log methods.
+Logging is a common task in enterprise applications. This library contains simple `Logger` class to provide a number of overloaded Log methods as well as some additional specialised event logging methods:
 
 | Method  | Purpose                                 |
 | ------- | --------------------------------------- |
+| Log     | To log an event.                        |
 | Begin   | To log the beginning of a routine.      |
 | End     | To log the end of a routine.            |
 | Start   | To log the start of an overall process. |
 | Success | To log the overall success a process.   |
 | Failure | To log the overall failure a process.   |
 
-Log handling is implemented by a number of `ILogHandler` objects. These are passed into the `Logger` constructor. Out of the box, there are the following `ILogHandler` types:
+Log handling is implemented by types implementing the `ILogHandler` interface. LogHandlers are added to the Logger via the constructor. Out of the box, there are several `ILogHandler` types:
 
 | Type              | Purpose                     |
 | ----------------- | --------------------------- |
